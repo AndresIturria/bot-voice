@@ -2,6 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
+from time import sleep as sleep
 from discord import FFmpegPCMAudio
 
 load_dotenv()
@@ -18,6 +19,7 @@ async def on_voice_state_update(member, before, after):
         channel = after.channel
         voice_channel = await channel.connect()
         voice_channel.play(discord.FFmpegPCMAudio(source=filename))
+        sleep(5)
         await voice_channel.disconnect()
 
 
