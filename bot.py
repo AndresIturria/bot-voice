@@ -18,6 +18,7 @@ async def on_voice_state_update(member, before, after):
         channel = after.channel
         voice_channel = await channel.connect()
         voice_channel.play(discord.FFmpegPCMAudio(source=filename))
+        voice_channel.disconnect()
 
 
 
