@@ -7,7 +7,7 @@ from discord import FFmpegPCMAudio
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-bot = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix="$", intents=discord.Intents.default())
 
 @bot.event
 async def on_voice_state_update(member, before, after):
