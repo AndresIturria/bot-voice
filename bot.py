@@ -16,7 +16,7 @@ async def on_voice_state_update(member, before, after):
 
     if before.channel is None and after.channel is not None:
         channel = after.channel
-        voice = await channel.connect
+        voice = await channel.connect()
         source = discord.FFmpegPCMAudioAudio('monkey.mp3')
         player = voice.play(source)
 
